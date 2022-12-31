@@ -1,7 +1,18 @@
 package com.driver.model.request;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.NoArgsConstructor;
+
+import javax.persistence.Column;
+
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 public class UserDetailsRequestModel {
 
+	@Column(unique = true,nullable = false)
+	private String userId;
 	private String firstName;
 	private String lastName;
 	private String email;
@@ -29,4 +40,11 @@ public class UserDetailsRequestModel {
 		this.email = email;
 	}
 
+	public String getUserId() {
+		return userId;
+	}
+
+	public void setUserId(String userId) {
+		this.userId = userId;
+	}
 }

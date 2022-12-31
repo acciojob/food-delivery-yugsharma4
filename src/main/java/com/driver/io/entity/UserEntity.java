@@ -1,17 +1,19 @@
 package com.driver.io.entity;
 
+import lombok.*;
+
 import java.io.Serializable;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity(name = "users")
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 public class UserEntity{
 
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
 
 	@Column(nullable = false)
